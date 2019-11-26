@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEC2D03C-222B-4F0A-85D9-B8516BF49C0E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Proyecto_Final</RootNamespace>
+    <AssemblyName>Proyecto Final</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Consultas\cAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cAsignacion.Designer.cs">
+      <DependentUpon>cAsignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cAsignaturas.Designer.cs">
+      <DependentUpon>cAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cAsistencias.Designer.cs">
+      <DependentUpon>cAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cCategoriasAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cCategoriasAsignaciones.Designer.cs">
+      <DependentUpon>cCategoriasAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cEstudiantes.Designer.cs">
+      <DependentUpon>cEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cInscripcion.Designer.cs">
+      <DependentUpon>cInscripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cProfesores.Designer.cs">
+      <DependentUpon>cProfesores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cSemestre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cSemestre.Designer.cs">
+      <DependentUpon>cSemestre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuarios.Designer.cs">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\Herramientas\BusquedaEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\Herramientas\BusquedaEstudiantes.Designer.cs">
+      <DependentUpon>BusquedaEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\Herramientas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\Herramientas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\Herramientas\RecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\Herramientas\RecuperarContraseña.Designer.cs">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rAsignaciones.Designer.cs">
+      <DependentUpon>rAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rAsignaturas.Designer.cs">
+      <DependentUpon>rAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rAsistencias.Designer.cs">
+      <DependentUpon>rAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rCategoriasAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCategoriasAsignaciones.Designer.cs">
+      <DependentUpon>rCategoriasAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rEstudiantes.Designer.cs">
+      <DependentUpon>rEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rInscripciones.Designer.cs">
+      <DependentUpon>rInscripciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rProfesores.Designer.cs">
+      <DependentUpon>rProfesores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rUsuarios.Designer.cs">
+      <DependentUpon>rUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\AsignacionesCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsignacionesCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\AsignaturasCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsignaturasCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\AsistenciasCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsistenciasCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\CategoriasAsignacionesCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoriasAsignacionesCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\EstudiantesCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstudiantesCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\InscripcionesCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InscripcionesCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ProfesoresCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfesoresCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsignaciones.Designer.cs">
+      <DependentUpon>ReporteAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsistencias.Designer.cs">
+      <DependentUpon>ReporteAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsistenciasDiarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsistenciasDiarias.Designer.cs">
+      <DependentUpon>ReporteAsistenciasDiarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rSemestres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rSemestres.Designer.cs">
+      <DependentUpon>rSemestres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteAsignaturas.Designer.cs">
+      <DependentUpon>ReporteAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\AsistenciasDiariasCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsistenciasDiariasCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteCategorias.Designer.cs">
+      <DependentUpon>ReporteCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteEstudiantes.Designer.cs">
+      <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteInscripciones.Designer.cs">
+      <DependentUpon>ReporteInscripciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteProfesores.Designer.cs">
+      <DependentUpon>ReporteProfesores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteSemestres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteSemestres.Designer.cs">
+      <DependentUpon>ReporteSemestres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteUsuarios.Designer.cs">
+      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\SemestresCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SemestresCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\UsuariosCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuariosCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Consultas\cAsignacion.resx">
+      <DependentUpon>cAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cAsignaturas.resx">
+      <DependentUpon>cAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cAsistencias.resx">
+      <DependentUpon>cAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cCategoriasAsignaciones.resx">
+      <DependentUpon>cCategoriasAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cEstudiantes.resx">
+      <DependentUpon>cEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cInscripcion.resx">
+      <DependentUpon>cInscripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cProfesores.resx">
+      <DependentUpon>cProfesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cSemestre.resx">
+      <DependentUpon>cSemestre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cUsuarios.resx">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\Herramientas\BusquedaEstudiantes.resx">
+      <DependentUpon>BusquedaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\Herramientas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\Herramientas\RecuperarContraseña.resx">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rAsignaciones.resx">
+      <DependentUpon>rAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rAsignaturas.resx">
+      <DependentUpon>rAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rAsistencias.resx">
+      <DependentUpon>rAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCategoriasAsignaciones.resx">
+      <DependentUpon>rCategoriasAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rEstudiantes.resx">
+      <DependentUpon>rEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rInscripciones.resx">
+      <DependentUpon>rInscripciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rProfesores.resx">
+      <DependentUpon>rProfesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rUsuarios.resx">
+      <DependentUpon>rUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\AsignacionesCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AsignacionesCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\AsignaturasCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AsignaturasCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\AsistenciasCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AsistenciasCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\CategoriasAsignacionesCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CategoriasAsignacionesCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\EstudiantesCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstudiantesCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\InscripcionesCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InscripcionesCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ProfesoresCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProfesoresCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteAsignaciones.resx">
+      <DependentUpon>ReporteAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteAsistencias.resx">
+      <DependentUpon>ReporteAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteAsistenciasDiarias.resx">
+      <DependentUpon>ReporteAsistenciasDiarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rSemestres.resx">
+      <DependentUpon>rSemestres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteAsignaturas.resx">
+      <DependentUpon>ReporteAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\AsistenciasDiariasCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AsistenciasDiariasCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteCategorias.resx">
+      <DependentUpon>ReporteCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteEstudiantes.resx">
+      <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteInscripciones.resx">
+      <DependentUpon>ReporteInscripciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteProfesores.resx">
+      <DependentUpon>ReporteProfesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteSemestres.resx">
+      <DependentUpon>ReporteSemestres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteUsuarios.resx">
+      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\SemestresCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SemestresCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\UsuariosCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UsuariosCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgBuscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgEliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgGuardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{6c5e68a9-ead2-4bf3-98e9-0b8c34771a73}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{121321c7-462b-4633-b9d1-2c4f35ba2abf}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

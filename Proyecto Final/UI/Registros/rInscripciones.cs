@@ -47,6 +47,7 @@ namespace Proyecto_Final.UI.Registros
         private void Limpiar()
         {
             MyErrorProvider.Clear();
+            FechaDateTimePicker.Value = DateTime.Now;
             InscripcionIdNumericUpDown.Value = 0;
             SemestreIdNumericUpDown.Value = 0;
             AsignaturasComboBox.ResetText();
@@ -60,6 +61,8 @@ namespace Proyecto_Final.UI.Registros
 
         private void LlenaCampos(Inscripciones inscripcion)
         {
+
+            FechaDateTimePicker.Value = inscripcion.Fecha;
             InscripcionIdNumericUpDown.Value = inscripcion.InscripcionId;
             SemestreIdNumericUpDown.Value = inscripcion.SemestreId;
             AsignaturasComboBox.Text = inscripcion.Asignatura;
